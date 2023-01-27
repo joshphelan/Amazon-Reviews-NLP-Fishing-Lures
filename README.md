@@ -1,2 +1,8 @@
 # Amazon-Reviews-NLP-Fishing-Lures
-Classifying text data of Amazon reviews for soft plastic fishing lures based on star rating.
+<i>Classifying text data of Amazon reviews for soft plastic fishing lures based on star rating.</i>
+
+The goal of this project is to analyze the text of Amazon reviews to predict if the review is positive or negative based on the star rating. I focus specifically on reviews for soft plastic fishing lures because I enjoy fishing and want to understand what fishermen around the world think makes a good or bad soft plastic fishing lure. There are three parts of the project: web scraping, exploratory data analysis and text processing and modeling. 
+
+To gather the reviews, I used Beautiful Soup to scrape product information from the first 25 pages of results for <a href = "https://www.amazon.com/s?k=%22soft+plastic+fishing+lures%22&i=sporting">“soft plastic fishing lures”</a>, the review page links for each product, and the reviews from each of those links. The script is named `Amazon Reviews Web Scraping.py`. After cleaning and exploring the data in `Amazon Reviews EDA and Visualizations.ipynb`, I created an analyzer function using NLTK to remove punctuation, stop words and to stem words in reviews. I created a pipeline that uses this function to create a vector of words for each review, then calculated the TF-IDF scores for every word and finally modeled the data with a classifier model.
+
+I built several classifier models, including Complement Naïve Bayes, Support Vector Machine and Logistic Regression. After removing 3 star reviews from the negative class, I created a model with an F1 score of 0.95 for positive and 0.64 for negative reviews, with a weighted average of 0.91. The text processing and modeling results file is named `Amazon Reviews Text Processing and Modeling.ipynb`.
